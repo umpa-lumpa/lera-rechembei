@@ -25,10 +25,23 @@ insert(data) {
 		}
 }
 contains(data) {
-
+	if(this.root===null){
+		return false;
 	}
-
-	
+	else{
+		var r=this.root;
+		while(r!=null){
+			if(r.data===data){
+				return true;
+			}
+			else{
+				if(data<r.data) r=r.left;
+				else r=r.right;
+			}		
+		}
+		return false;
+	}		
+}	
 remove(data) {
 
 	}
