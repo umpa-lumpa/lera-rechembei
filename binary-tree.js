@@ -99,12 +99,24 @@ if(this.contains(data)){
 }
 }	
 size() {
-
+	if(this.root===null) return 0;
+	else{
+		function size_tree(r){
+			if(r!=null){
+			var n=1;
+			return n+size_tree(r.right)+size_tree(r.left);}
+			else return 0;
+		}
+		return size_tree(this.root);
 	}
-
+}
 	
 isEmpty() {
-
-	}
-
+	if(this.root===null){
+		return true;
+	} 
+	else{
+		return false;
+	} 
+}
 }
